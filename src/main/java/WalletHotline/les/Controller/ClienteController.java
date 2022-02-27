@@ -12,35 +12,27 @@ public class ClienteController {
     @Autowired
     private ClienteRepository repository;
 
-    //read
+    // read
     @GetMapping(path = "/api/cliente/{id}")
-    public ResponseEntity consultar(@PathVariable("id") Integer id){
+    public ResponseEntity consultar(@PathVariable("id") Integer id) {
         return repository.findById(id).map(record -> ResponseEntity.ok().body(record)).orElseThrow();
     }
 
-    //create/update
-    @PostMapping(path = "/api/cliente")//salva e atualiza caso tenha um id
-    public ClienteModel salvar(@RequestBody ClienteModel cliente){
+    // create/update
+    @PostMapping(path = "/api/cliente") // salva e atualiza caso tenha um id
+    public ClienteModel salvar(@RequestBody ClienteModel cliente) {
         return repository.save(cliente);
     }
 
-    //get
+    // get
     @GetMapping(path = "/api/cliente")
-    public Iterable<ClienteModel> consultarTodos(){
+    public Iterable<ClienteModel> consultarTodos() {
         return repository.findAll();
     }
 
-    //delete
+    // delete
     @DeleteMapping(path = "/api/cliente/{id}")
-    public void deletar(@PathVariable("id") Integer id){ repository.deleteById(id);}
+    public void deletar(@PathVariable("id") Integer id) {
+        repository.deleteById(id);
+    }
 }
-
-
-dfsdfsdfsd
-sdfsdfs
-
-
-
-
-
-asddd
