@@ -34,3 +34,13 @@ public class ClienteController {
     @DeleteMapping(path = "/api/cliente/{id}")
     public void deletar(@PathVariable("id") Integer id){ repository.deleteById(id);}
 }
+
+
+dfsdfsdfsd
+sdfsdfs
+
+
+
+
+
+asddd
