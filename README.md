@@ -3,7 +3,7 @@
 ![image](https://user-images.githubusercontent.com/90282663/155867366-c6a26656-4617-4e5e-be94-d8264f84c7e7.png)
 
 API criada para o Projeto de LES<p/>
-Nenhuma configuração básica necessária
+Necessário alterar resources/application.yml para conexão com o banco 
 
 <h1>Dicas</h1>
 <ol>
