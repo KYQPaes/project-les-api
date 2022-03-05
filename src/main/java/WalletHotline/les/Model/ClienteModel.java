@@ -5,14 +5,11 @@ import javax.persistence.*;
 @Entity(name = "clientes")
 public class ClienteModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//Cria um id com autoincrement
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Cria um id com autoincrement
     public Integer id;
 
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public String nome;
-
-    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
-    public String sobrenome;
 
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public String senha;
@@ -25,6 +22,24 @@ public class ClienteModel {
 
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public String email;
+
+    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public String genero;
+
+    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public String cpf;
+
+    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public String endereco;
+
+    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public String tptelefone;
+
+    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public String ddd;
+
+    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public String telefone;
 
     public String getData_nasc() {
         return data_nasc;
@@ -66,14 +81,6 @@ public class ClienteModel {
         this.nome = nome;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
     public String getSenha() {
         return senha;
     }
@@ -81,4 +88,53 @@ public class ClienteModel {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getGenero() {
+        return this.genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEndereco() {
+        return this.endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getTptelefone() {
+        return this.tptelefone;
+    }
+
+    public void setTptelefone(String tptelefone) {
+        this.tptelefone = tptelefone;
+    }
+
+    public String getDdd() {
+        return this.ddd;
+    }
+
+    public void setDdd(String ddd) {
+        this.ddd = ddd;
+    }
+
+    public String getTelefone() {
+        return this.telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
 }
