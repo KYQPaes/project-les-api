@@ -6,6 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 server:
+  port: 3000
   error:
     include-message: always
     include-binding-errors: always
