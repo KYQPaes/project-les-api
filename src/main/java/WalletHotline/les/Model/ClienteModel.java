@@ -18,9 +18,6 @@ public class ClienteModel {
     public String data_nasc;
 
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
-    public String sexo;
-
-    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public String email;
 
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
@@ -47,14 +44,6 @@ public class ClienteModel {
 
     public void setData_nasc(String data_nasc) {
         this.data_nasc = data_nasc;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
     }
 
     public String getEmail() {
