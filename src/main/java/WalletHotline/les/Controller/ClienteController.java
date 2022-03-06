@@ -12,7 +12,7 @@ public class ClienteController {
     @Autowired
     private ClienteRepository repository;
 
-    // read
+    // read teste
     @GetMapping(path = "/api/clientes/{id}")
     @CrossOrigin(origins = "http://192.168.1.19:8080")
     public ResponseEntity consultar(@PathVariable("id") Integer id) {
