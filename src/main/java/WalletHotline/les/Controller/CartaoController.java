@@ -21,7 +21,15 @@ public class CartaoController {
                 return repository.findByClienteId(cliente_id);
         }
 
-        @PutMapping(path = "") // salva e atualiza caso tenha um id
+        // delete
+        @DeleteMapping(path = "/{id}")
+        @CrossOrigin(origins = "http://192.168.1.19:8080")
+        public void deletar(@PathVariable("id") Integer id) {
+                repository.deleteById(id);
+        }
+
+        // update
+        @PutMapping(path = "")
         @CrossOrigin(origins = "http://192.168.1.19:8080")
         public CartaoModel atualizar(@RequestBody CartaoModel cartao) {
                 return repository.save(cartao);
@@ -30,7 +38,7 @@ public class CartaoController {
         // create/update
         @PostMapping(path = "") // salva e atualiza caso tenha um id
         @CrossOrigin(origins = "http://192.168.1.19:8080")
-        public CartaoModel salvar(@RequestBody CartaoModel cartao){
+        public CartaoModel salvar(@RequestBody CartaoModel cartao) {
                 return repository.save(cartao);
         }
 

@@ -27,14 +27,14 @@ public class EnderecoController {
     }
 
     // update
-    @PutMapping(path = "/api/enderecos") // salva e atualiza caso tenha um id
+    @PutMapping(path = "/api/enderecos")
     @CrossOrigin(origins = "http://192.168.1.19:8080")
     public EnderecoModel atualizar(@RequestBody EnderecoModel endereco) {
         return repository.save(endereco);
     }
 
-    // create/update
-    @PostMapping(path = "/api/enderecos") // salva e atualiza caso tenha um id
+    // create
+    @PostMapping(path = "/api/enderecos")
     @CrossOrigin(origins = "http://192.168.1.19:8080")
     public EnderecoModel salvar(@RequestBody EnderecoModel endereco) {
         return repository.save(endereco);
