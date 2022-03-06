@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity(name = "enderecos")
 public class EnderecoModel {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Cria um id com autoincrement
     public Integer id;
@@ -31,9 +30,8 @@ public class EnderecoModel {
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public String estado;
 
-    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
-    public Integer cliente_id;
-
+    @Column(name = "cliente_id", nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public Integer clienteId;
 
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public String tipo_residencia;
@@ -105,12 +103,12 @@ public class EnderecoModel {
         this.estado = estado;
     }
 
-    public Integer getCliente_id() {
-        return cliente_id;
+    public Integer getClienteId() {
+        return clienteId;
     }
 
-    public void setCliente_id(Integer cliente_id) {
-        this.cliente_id = cliente_id;
+    public void setClienteId(Integer clienteId) {
+        this.clienteId = clienteId;
     }
 
     public String getTipo_residencia() {
