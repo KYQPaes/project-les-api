@@ -25,10 +25,17 @@ public class ClienteController {
         return repository.findByEmailAndSenha(email, senha);
     }
 
-    // create/update
-    @PostMapping(path = "/api/clientes") // salva e atualiza caso tenha um id
+    // create
+    @PostMapping(path = "/api/clientes")
     @CrossOrigin(origins = "http://192.168.1.19:8080")
     public ClienteModel salvar(@RequestBody ClienteModel cliente) {
+        return repository.save(cliente);
+    }
+
+    // update
+    @PutMapping(path = "/api/clientes")
+    @CrossOrigin(origins = "http://192.168.1.19:8080")
+    public ClienteModel atualizar(@RequestBody ClienteModel cliente) {
         return repository.save(cliente);
     }
 
