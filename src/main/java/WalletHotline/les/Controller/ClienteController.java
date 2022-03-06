@@ -14,29 +14,34 @@ public class ClienteController {
 
     // read
     @GetMapping(path = "/api/clientes/{id}")
+    @CrossOrigin(origins = "http://192.168.1.19:8080")
     public ResponseEntity consultar(@PathVariable("id") Integer id) {
         return repository.findById(id).map(record -> ResponseEntity.ok().body(record)).orElseThrow();
     }
 
     @GetMapping(path = "/api/clientes/log")
+    @CrossOrigin(origins = "http://192.168.1.19:8080")
     public Iterable<ClienteModel> consultarLogin(@RequestParam String email, @RequestParam String senha) {
         return repository.findByEmailAndSenha(email, senha);
     }
 
     // create/update
     @PostMapping(path = "/api/clientes") // salva e atualiza caso tenha um id
+    @CrossOrigin(origins = "http://192.168.1.19:8080")
     public ClienteModel salvar(@RequestBody ClienteModel cliente) {
         return repository.save(cliente);
     }
 
     // get
     @GetMapping(path = "/api/clientes")
+    @CrossOrigin(origins = "http://192.168.1.19:8080")
     public Iterable<ClienteModel> consultarTodos() {
         return repository.findAll();
     }
 
     // delete
     @DeleteMapping(path = "/api/clientes/{id}")
+    @CrossOrigin(origins = "http://192.168.1.19:8080")
     public void deletar(@PathVariable("id") Integer id) {
         repository.deleteById(id);
     }
