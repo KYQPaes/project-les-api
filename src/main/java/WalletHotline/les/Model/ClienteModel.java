@@ -38,6 +38,9 @@ public class ClienteModel {
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public String telefone;
 
+    @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public boolean inativar;
+
     public String getData_nasc() {
         return data_nasc;
     }
@@ -124,6 +127,18 @@ public class ClienteModel {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public boolean isInativar() {
+        return this.inativar;
+    }
+
+    public boolean getInativar() {
+        return this.inativar;
+    }
+
+    public void setInativar(boolean inativar) {
+        this.inativar = inativar;
     }
 
 }
