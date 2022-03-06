@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(maxAge = 9999)
+@CrossOrigin(maxAge = 9999) ////////////////// problemas com cors
 @RestController
 @RequestMapping("/api/clientes")
 public class ClienteController {
