@@ -1,6 +1,7 @@
 package WalletHotline.les.Controller;
 
 import WalletHotline.les.Model.CartaoModel;
+import WalletHotline.les.Model.EnderecoModel;
 import WalletHotline.les.Repository.CartaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,16 +21,23 @@ public class CartaoController {
                 return repository.findByClienteId(cliente_id);
         }
 
-        // @GetMapping(path = "/api/cartoes/{id}")
-        // @CrossOrigin(origins = "http://192.168.1.19:8080")
-        // public ResponseEntity consultar(@PathVariable("id") Integer id) {
-        // return repository.findById(id).map(record ->
-        // ResponseEntity.ok().body(record)).orElseThrow();
-        // }
+        @PutMapping(path = "") // salva e atualiza caso tenha um id
+        @CrossOrigin(origins = "http://192.168.1.19:8080")
+        public CartaoModel atualizar(@RequestBody CartaoModel cartao) {
+                return repository.save(cartao);
+        }
 
-        // @GetMapping(path = "/api/cartoes")
-        // @CrossOrigin(origins = "http://192.168.1.19:8080")
-        // public Iterable<CartaoModel> listar() {
-        // return repository.findAll();
-        // }
+        // create/update
+        @PostMapping(path = "") // salva e atualiza caso tenha um id
+        @CrossOrigin(origins = "http://192.168.1.19:8080")
+        public CartaoModel salvar(@RequestBody CartaoModel cartao){
+                return repository.save(cartao);
+        }
+
+        // get
+        @GetMapping(path = "")
+        @CrossOrigin(origins = "http://192.168.1.19:8080")
+        public Iterable<CartaoModel> consultarTodos() {
+                return repository.findAll();
+        }
 }

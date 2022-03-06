@@ -12,6 +12,9 @@ public class CartaoModel {
         public String nome;
 
         @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+        public String bandeira;
+
+        @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
         public String numero;
 
         @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
@@ -82,4 +85,12 @@ public class CartaoModel {
                 this.clienteId = clienteId;
         }
 
+
+        public String getBandeira() {
+                return bandeira;
+        }
+
+        public void setBandeira(String bandeira) {
+                this.bandeira = bandeira;
+        }
 }
