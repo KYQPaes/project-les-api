@@ -20,6 +20,19 @@ public class CartaoController {
                 return repository.findByClienteId(cliente_id);
         }
 
+        // delete
+        @DeleteMapping(path = "/{id}")
+        @CrossOrigin(origins = "http://192.168.1.19:8080")
+        public void deletar(@PathVariable("id") Integer id) {
+                repository.deleteById(id);
+        }
+
+        @PutMapping(path = "")
+        @CrossOrigin(origins = "http://192.168.1.19:8080")
+        public CartaoModel atualizar(@RequestBody CartaoModel cartao) {
+                return repository.save(cartao);
+        }
+
         // @GetMapping(path = "/api/cartoes/{id}")
         // @CrossOrigin(origins = "http://192.168.1.19:8080")
         // public ResponseEntity consultar(@PathVariable("id") Integer id) {
