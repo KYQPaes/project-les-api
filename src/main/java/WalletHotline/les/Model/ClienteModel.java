@@ -41,6 +41,9 @@ public class ClienteModel {
     @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public boolean inativar;
 
+    @Column(name = "cartao_fav_id", nullable = true, length = 50, columnDefinition = "default 'NULL'")
+    public Integer cartaoFavId;
+
     public String getData_nasc() {
         return data_nasc;
     }
@@ -139,6 +142,14 @@ public class ClienteModel {
 
     public void setInativar(boolean inativar) {
         this.inativar = inativar;
+    }
+
+    public Integer getCartaoFavId() {
+        return this.cartaoFavId;
+    }
+
+    public void setCartaoFavId(Integer cartaoFavId) {
+        this.cartaoFavId = cartaoFavId;
     }
 
 }
