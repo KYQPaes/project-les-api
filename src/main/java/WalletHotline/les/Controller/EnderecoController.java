@@ -1,6 +1,5 @@
 package WalletHotline.les.Controller;
 
-import WalletHotline.les.Model.ClienteModel;
 import WalletHotline.les.Model.EnderecoModel;
 import WalletHotline.les.Repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
