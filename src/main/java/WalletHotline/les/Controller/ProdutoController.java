@@ -3,6 +3,7 @@ package WalletHotline.les.Controller;
 import WalletHotline.les.Model.ProdutoModel;
 import WalletHotline.les.Repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(maxAge = 9999, origins = "*", allowedHeaders = "*")
@@ -21,5 +22,10 @@ public class ProdutoController {
         @GetMapping(path = "")
         public Iterable<ProdutoModel> consultarTodos() {
                 return repository.findAll();
+        }
+
+        @GetMapping(path = "/{id}")
+        public ResponseEntity consultar(@PathVariable("id") Integer id) {
+                return repository.findById(id).map(record -> ResponseEntity.ok().body(record)).orElseThrow();
         }
 }
