@@ -1,5 +1,6 @@
 package WalletHotline.les.Controller;
 
+import WalletHotline.les.Model.ClienteModel;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,5 +17,11 @@ public class CupomController {
         @GetMapping(path = "/clienteid/{id}")
         public Iterable<CupomModel> consultarClienteId(@PathVariable("id") Integer id) {
                 return repository.findByClienteId(id);
+        }
+
+        // get
+        @GetMapping(path = "")
+        public Iterable<CupomModel> consultarTodos() {
+                return repository.findAll();
         }
 }
