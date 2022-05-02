@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +26,16 @@ public class CompraController {
                 return repository.findByClienteId(id);
         }
 
+        @PostMapping(path = "")
+        public CompraModel salvar(@RequestBody CompraModel compra) {
+                return repository.save(compra);
+        }
+
         // update
         @PutMapping(path = "")
         @CrossOrigin(origins = "http://192.168.1.19:8080")
         public CompraModel atualizar(@RequestBody CompraModel compra) {
                 return repository.save(compra);
         }
+
 }
