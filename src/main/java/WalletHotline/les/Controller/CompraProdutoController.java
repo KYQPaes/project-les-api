@@ -1,8 +1,10 @@
 package WalletHotline.les.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,11 @@ public class CompraProdutoController {
         @CrossOrigin(origins = "http://192.168.1.19:8080")
         public Iterable<CompraProdutoModel> consultarTodos() {
                 return repository.findAll();
+        }
+
+        @GetMapping(path = "compraid/{id}")
+        public Iterable<CompraProdutoModel> consultar(@PathVariable("id") Integer id) {
+                return repository.findByCompraid(id);
         }
 
         @PostMapping(path = "")

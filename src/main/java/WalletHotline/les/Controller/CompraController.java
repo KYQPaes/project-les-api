@@ -3,6 +3,7 @@ package WalletHotline.les.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,11 @@ public class CompraController {
         @GetMapping(path = "/clienteid/{id}")
         public Iterable<CompraModel> consultarClienteId(@PathVariable("id") Integer id) {
                 return repository.findByClienteId(id);
+        }
+
+        @GetMapping(path = "/{id}")
+        public ResponseEntity consultar(@PathVariable("id") Integer id) {
+                return repository.findById(id).map(record -> ResponseEntity.ok().body(record)).orElseThrow();
         }
 
         @PostMapping(path = "")
