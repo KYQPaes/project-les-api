@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import WalletHotline.les.Model.CompraModel;
-import WalletHotline.les.Model.CompraProdutoModel;
+// import WalletHotline.les.Model.CompraProdutoModel;
 import WalletHotline.les.Repository.CompraRepository;
 
 @CrossOrigin(maxAge = 9999, origins = "*", allowedHeaders = "*")

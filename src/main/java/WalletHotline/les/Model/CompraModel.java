@@ -40,9 +40,10 @@ public class CompraModel {
 	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
 	public String metodo2;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "compra_id", nullable = false, updatable = false, insertable = false)
-	private List<CompraProdutoModel> CompraProduto;
+	// @OneToMany(cascade = CascadeType.ALL)
+	// @JoinColumn(name = "compra_id", nullable = false, updatable = false,
+	// insertable = false)
+	// private List<CompraProdutoModel> CompraProduto;
 
 	// public void addCompraProduto(CompraProdutoModel CP) {
 	// if (CP == null) {
@@ -136,11 +137,11 @@ public class CompraModel {
 		this.metodo2 = metodo2;
 	}
 
-	public List<CompraProdutoModel> getCompraProduto() {
-		return CompraProduto;
-	}
+	// public List<CompraProdutoModel> getCompraProduto() {
+	// return CompraProduto;
+	// }
 
-	public void setCompraProduto(List<CompraProdutoModel> compraProduto) {
-		CompraProduto = compraProduto;
-	}
+	// public void setCompraProduto(List<CompraProdutoModel> compraProduto) {
+	// CompraProduto = compraProduto;
+	// }
 }
