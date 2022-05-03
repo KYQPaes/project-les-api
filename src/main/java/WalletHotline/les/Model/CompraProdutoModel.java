@@ -19,19 +19,6 @@ public class CompraProdutoModel {
         @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
         private Integer quantidade;
 
-        // @ManyToOne(cascade = CascadeType.ALL)
-        // @JoinColumn(referencedColumnName = "id", insertable = false, updatable =
-        // false)
-        // private CompraModel Compra;
-
-        // public CompraModel getCompra() {
-        // return Compra;
-        // }
-
-        // public void setCompra(CompraModel compra) {
-        // Compra = compra;
-        // }
-
         public void setCompraid(Integer compraid) {
                 this.compraid = compraid;
         }
