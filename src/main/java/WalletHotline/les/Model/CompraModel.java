@@ -28,6 +28,9 @@ public class CompraModel {
 	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
 	public String endereco;
 
+	@Column(name = "endereco_cobranca", nullable = true, length = 50, columnDefinition = "default 'NULL'")
+	public String enderecoCobranca;
+
 	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
 	public Float frete;
 
@@ -39,6 +42,7 @@ public class CompraModel {
 
 	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
 	public String metodo2;
+
 
 	// @OneToMany(cascade = CascadeType.ALL)
 	// @JoinColumn(name = "compra_id", nullable = false, updatable = false,
@@ -99,6 +103,14 @@ public class CompraModel {
 
 	public String getEndereco() {
 		return endereco;
+	}
+
+	public void setEnderecoCobranca(String endereco) {
+		this.enderecoCobranca = endereco;
+	}
+
+	public String getEnderecoCobranca() {
+		return enderecoCobranca;
 	}
 
 	public void setEndereco(String endereco) {
