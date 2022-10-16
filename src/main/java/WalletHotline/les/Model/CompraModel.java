@@ -41,8 +41,13 @@ public class CompraModel {
 	public Float valor;
 
 	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
-	public String metodo2;
+	public Float metodoPreco;
 
+	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+	public Float metodo2Preco;
+
+	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+	public String metodo2;
 
 	// @OneToMany(cascade = CascadeType.ALL)
 	// @JoinColumn(name = "compra_id", nullable = false, updatable = false,
@@ -147,6 +152,22 @@ public class CompraModel {
 
 	public void setMetodo2(String metodo2) {
 		this.metodo2 = metodo2;
+	}
+
+	public Float getMetodoPreco() {
+		return metodoPreco;
+	}
+
+	public void setMetodoPreco(Float metodoPreco) {
+		this.metodoPreco = metodoPreco;
+	}
+
+	public Float getMetodo2Preco() {
+		return metodo2Preco;
+	}
+
+	public void setMetodo2Preco(Float metodo2Preco) {
+		this.metodo2Preco = metodo2Preco;
 	}
 
 	// public List<CompraProdutoModel> getCompraProduto() {
