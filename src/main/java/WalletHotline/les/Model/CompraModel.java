@@ -49,6 +49,9 @@ public class CompraModel {
 	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
 	public String metodo2;
 
+	@Column(name = "motivo_troca", nullable = true, length = 50, columnDefinition = "default 'NULL'")
+	public String motivoTroca;
+
 	// @OneToMany(cascade = CascadeType.ALL)
 	// @JoinColumn(name = "compra_id", nullable = false, updatable = false,
 	// insertable = false)
@@ -168,6 +171,14 @@ public class CompraModel {
 
 	public void setMetodo2Preco(Float metodo2Preco) {
 		this.metodo2Preco = metodo2Preco;
+	}
+
+	public String getMotivoTroca() {
+		return motivoTroca;
+	}
+
+	public void setMotivoTroca(String motivoTroca) {
+		this.motivoTroca = motivoTroca;
 	}
 
 	// public List<CompraProdutoModel> getCompraProduto() {
