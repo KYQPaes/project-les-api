@@ -40,10 +40,10 @@ public class CompraModel {
 	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
 	public Float valor;
 
-	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+	@Column(name = "metodo_Preco", nullable = true, length = 50, columnDefinition = "default 'NULL'")
 	public Float metodoPreco;
 
-	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+	@Column(name = "metodo2_Preco", nullable = true, length = 50, columnDefinition = "default 'NULL'")
 	public Float metodo2Preco;
 
 	@Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
