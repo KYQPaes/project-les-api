@@ -1,6 +1,5 @@
 package WalletHotline.les.Controller;
 
-import WalletHotline.les.Model.ClienteModel;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,5 +22,10 @@ public class CupomController {
         @GetMapping(path = "")
         public Iterable<CupomModel> consultarTodos() {
                 return repository.findAll();
+        }
+
+        @PostMapping(path = "")
+        public CupomModel salvar(@RequestBody CupomModel cupom) {
+                return repository.save(cupom);
         }
 }

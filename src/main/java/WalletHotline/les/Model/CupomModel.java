@@ -24,6 +24,9 @@ public class CupomModel {
         @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
         public String status;
 
+        @Column(nullable = true, length = 50, columnDefinition = "default 'NULL'")
+        public String valor;
+
         public Integer getId() {
                 return id;
         }
@@ -70,6 +73,14 @@ public class CupomModel {
 
         public void setStatus(String status) {
                 this.status = status;
+        }
+
+        public String getValor() {
+                return valor;
+        }
+
+        public void setValor(String valor) {
+                this.valor = valor;
         }
 
 }
