@@ -28,4 +28,9 @@ public class CupomController {
         public CupomModel salvar(@RequestBody CupomModel cupom) {
                 return repository.save(cupom);
         }
+
+        @PutMapping(path = "")
+        public CupomModel atualizar(@RequestBody CupomModel cupom) {
+                return repository.save(cupom);
+        }
 }
