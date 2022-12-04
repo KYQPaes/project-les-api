@@ -28,4 +28,10 @@ public class ProdutoController {
         public ResponseEntity consultar(@PathVariable("id") Integer id) {
                 return repository.findById(id).map(record -> ResponseEntity.ok().body(record)).orElseThrow();
         }
+
+        // update
+        @PutMapping(path = "")
+        public ProdutoModel atualizar(@RequestBody ProdutoModel produto) {
+                return repository.save(produto);
+        }
 }
