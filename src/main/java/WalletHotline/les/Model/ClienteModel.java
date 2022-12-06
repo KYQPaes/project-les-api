@@ -44,6 +44,9 @@ public class ClienteModel {
     @Column(name = "cartao_fav_id", nullable = true, length = 50, columnDefinition = "default 'NULL'")
     public Integer cartaoFavId;
 
+    @Column(nullable = true, length = 50, columnDefinition = "default '0'")
+    public Integer ranking;
+
     public String getData_nasc() {
         return data_nasc;
     }
@@ -150,6 +153,14 @@ public class ClienteModel {
 
     public void setCartaoFavId(Integer cartaoFavId) {
         this.cartaoFavId = cartaoFavId;
+    }
+
+    public Integer getRanking() {
+        return this.ranking;
+    }
+
+    public void setRanking(Integer ranking) {
+        this.ranking = ranking;
     }
 
 }
